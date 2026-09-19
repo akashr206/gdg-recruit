@@ -444,7 +444,7 @@ export function initInteractions() {
       tempCtx.lineTo(centerX + offsetX, centerY + heightHalf);
       tempCtx.stroke();
 
-      const data32 = new Uint32Array(tempCtx.getImageData(0, 0, w, h).data.buffer);
+      const imgData = tempCtx.getImageData(0, 0, w, h).data;
 
       let rawPoints = [];
       let minX = w, maxX = 0, minY = h, maxY = 0;
@@ -455,7 +455,7 @@ export function initInteractions() {
       while (rawPoints.length < targetParticles && attempts < 100000) {
         let x = Math.floor(Math.random() * w);
         let y = Math.floor(Math.random() * h);
-        if (data32[y * w + x]) {
+        if (imgData[(y * w + x) * 4 + 3] > 128) {
           rawPoints.push({ x, y });
           if (x < minX) minX = x;
           if (x > maxX) maxX = x;
