@@ -1,0 +1,129 @@
+<div
+    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4"
+    id="application-modal"
+>
+    <div
+        class="bg-white w-full max-w-lg rounded-3xl gdg-border shadow-neo-lg overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+    >
+        <div
+            class="bg-gdg-yellow-pastel px-6 py-4 gdg-window-tab flex items-center justify-between"
+        >
+            <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-gdg-red gdg-border"></span>
+                <span
+                    class="w-3 h-3 rounded-full bg-gdg-yellow gdg-border"
+                ></span>
+                <span
+                    class="w-3 h-3 rounded-full bg-gdg-green gdg-border"
+                ></span>
+                <span class="font-mono text-xs font-bold ml-2"
+                    >core_application_form.md</span
+                >
+            </div>
+            <button
+                class="text-gray-700 hover:text-black font-bold text-xl leading-none"
+                onclick="closeApplicationModal()"
+                type="button"
+            >
+                ×
+            </button>
+        </div>
+        <form
+            class="p-6 sm:p-8 space-y-4 max-h-[80vh] overflow-y-auto"
+            id="core-application-form"
+            onsubmit="handleFormSubmit(event)"
+        >
+            <div>
+                <label
+                    class="block font-mono text-xs font-bold uppercase text-gray-700 mb-1"
+                    >Full Name *</label
+                >
+                <input
+                    class="w-full rounded-xl gdg-border text-sm p-3 focus:ring-2 focus:ring-gdg-blue focus:outline-none"
+                    placeholder="Visvesvaraya S."
+                    required=""
+                    type="text"
+                />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                    <label
+                        class="block font-mono text-xs font-bold uppercase text-gray-700 mb-1"
+                        >College Email / Personal *</label
+                    >
+                    <input
+                        class="w-full rounded-xl gdg-border text-sm p-3 focus:ring-2 focus:ring-gdg-blue focus:outline-none"
+                        placeholder="name@uvce.ac.in"
+                        required=""
+                        type="email"
+                    />
+                </div>
+                <div>
+                    <label
+                        class="block font-mono text-xs font-bold uppercase text-gray-700 mb-1"
+                        >Branch &amp; Grad Year *</label
+                    >
+                    <input
+                        class="w-full rounded-xl gdg-border text-sm p-3 focus:ring-2 focus:ring-gdg-blue focus:outline-none"
+                        placeholder="CSE 2027 / ECE 2028"
+                        required=""
+                        type="text"
+                    />
+                </div>
+            </div>
+            <div>
+                <label
+                    class="block font-mono text-xs font-bold uppercase text-gray-700 mb-1"
+                    >Primary Squad Selection *</label
+                >
+                <select
+                    class="w-full rounded-xl gdg-border text-sm p-3 focus:ring-2 focus:ring-gdg-blue focus:outline-none bg-white font-medium"
+                    id="modal-squad-select"
+                >
+                    <option value="tech">
+                        Tech Squad (Build: Full-Stack, AI, Cloud, Mobile)
+                    </option>
+                    <option value="design">
+                        Design Squad (Create: UI/UX, Motion, Visual Identity)
+                    </option>
+                    <option value="outreach">
+                        Outreach Squad (Connect: Sponsorships, PR, Community
+                        Ops)
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label
+                    class="block font-mono text-xs font-bold uppercase text-gray-700 mb-1"
+                    >GitHub / Behance / LinkedIn / Portfolio URL</label
+                >
+                <input
+                    class="w-full rounded-xl gdg-border text-sm p-3 focus:ring-2 focus:ring-gdg-blue focus:outline-none"
+                    placeholder="https://github.com/your-handle"
+                    type="url"
+                />
+            </div>
+            <div>
+                <label
+                    class="block font-mono text-xs font-bold uppercase text-gray-700 mb-1"
+                    >Why do you want to build GDG UVCE? *</label
+                >
+                <textarea
+                    class="w-full rounded-xl gdg-border text-sm p-3 focus:ring-2 focus:ring-gdg-blue focus:outline-none"
+                    placeholder="Tell us in 2-3 sentences what you'd like to initiate or improve this tenure..."
+                    required=""
+                    rows="3"
+                ></textarea>
+            </div>
+            <button
+                class="w-full py-3.5 rounded-full bg-gdg-blue hover:bg-blue-600 text-white font-extrabold text-sm gdg-border shadow-neo-sm hover:shadow-neo transition-all"
+                type="submit"
+            >
+                Submit Core Application <i data-lucide="arrow-right" class="w-4 h-4 inline"></i>
+            </button>
+            <p class="text-center font-mono text-[11px] text-gray-500">
+                We will review your submission and notify you for Stage 2.
+            </p>
+        </form>
+    </div>
+</div>

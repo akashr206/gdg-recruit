@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="scroll-smooth" lang="en" style="">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>
+            GDG UVCE Core Team Recruitment 2026–27 | Google Developer Groups On
+            Campus
+        </title>
+        <link rel="icon" type="image/png" href="/icon.png" />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link
+            crossorigin=""
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            gdg: {
+                                blue: "#4285F4",
+                                "blue-halftone": "#57caff",
+                                "blue-pastel": "#c3ecf6",
+                                green: "#34A853",
+                                "green-halftone": "#5cdb6d",
+                                "green-pastel": "#ccf6c5",
+                                yellow: "#f9ab00",
+                                "yellow-halftone": "#ffd427",
+                                "yellow-pastel": "#ffe7a5",
+                                red: "#ea4335",
+                                "red-halftone": "#ff7daf",
+                                "red-pastel": "#f8d8d8",
+                                black: "#1e1e1e",
+                                "off-white": "#f0f0f0",
+                                canvas: "#fafafa",
+                            },
+                        },
+                        fontFamily: {
+                            sans: [
+                                '"Plus Jakarta Sans"',
+                                "system-ui",
+                                "-apple-system",
+                                "sans-serif",
+                            ],
+                            mono: ['"JetBrains Mono"', "monospace"],
+                        },
+                        boxShadow: {
+                            neo: "4px 4px 0px #1e1e1e",
+                            "neo-lg": "8px 8px 0px #1e1e1e",
+                            "neo-sm": "2px 2px 0px #1e1e1e",
+                            "neo-hover": "6px 6px 0px #1e1e1e",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style data-purpose="base-styling">
+            body {
+                background-color: #fafafa;
+                color: #1e1e1e;
+                font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+            }
+
+            .gdg-border {
+                border: 2.5px solid #1e1e1e;
+            }
+
+            .gdg-window-tab {
+                border-bottom: 2.5px solid #1e1e1e;
+            }
+
+            .gdg-grid-pattern {
+                background-size: 32px 32px;
+                background-image:
+                    linear-gradient(
+                        to right,
+                        rgba(30, 30, 30, 0.05) 1px,
+                        transparent 1px
+                    ),
+                    linear-gradient(
+                        to bottom,
+                        rgba(30, 30, 30, 0.05) 1px,
+                        transparent 1px
+                    );
+            }
+
+            .gdg-dot-pattern {
+                background-image: radial-gradient(#1e1e1e 1px, transparent 1px);
+                background-size: 16px 16px;
+                opacity: 0.12;
+            }
+        </style>
+        <style data-purpose="interactive-components">
+            .role-pill.active {
+                background-color: #1e1e1e;
+                color: #ffffff;
+                border-color: #1e1e1e;
+                transform: translateY(-2px);
+                box-shadow: 3px 3px 0px #4285f4;
+            }
+
+            .faq-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+            }
+            .faq-content.open {
+                max-height: 500px;
+                transition: max-height 0.35s ease-in-out;
+            }
+
+            @keyframes slide-down {
+                0% {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slide-up {
+                0% {
+                    transform: translateY(40px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .animate-navbar {
+                animation: slide-down 0.8s cubic-bezier(0.16, 1, 0.3, 1)
+                    forwards;
+                animation-delay: 2.2s;
+                opacity: 0;
+            }
+
+            .animate-hero-text {
+                animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                opacity: 0;
+            }
+            .animate-hero-delay-1 {
+                animation-delay: 2.3s;
+            }
+            .animate-hero-delay-2 {
+                animation-delay: 2.45s;
+            }
+            .animate-hero-delay-3 {
+                animation-delay: 2.6s;
+            }
+            .animate-hero-delay-4 {
+                animation-delay: 2.75s;
+            }
+            .animate-hero-delay-5 {
+                animation-delay: 2.9s;
+            }
+        </style>
+    </head>
+    <body
+        class="min-h-screen flex flex-col font-sans selection:bg-gdg-yellow selection:text-gdg-black"
+    >
+        <div
+            id="cinematic-overlay"
+            class="fixed inset-0 bg-[#fafafa] z-[100] transition-opacity duration-1000 opacity-100 pointer-events-none"
+        ></div>
+
+        <canvas
+            id="particle-canvas"
+            class="absolute top-0 left-0 w-full h-screen z-[110] pointer-events-none"
+        ></canvas>
+
+        <div id="navbar-root"></div>
+
+        <main class="flex-grow">
+            <div id="hero-root"></div>
+            <div id="mission-root"></div>
+            <div id="squads-root"></div>
+            <div id="faq-root"></div>
+        </main>
+
+        <div id="footer-root"></div>
+        <div id="modal-root"></div>
+
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>

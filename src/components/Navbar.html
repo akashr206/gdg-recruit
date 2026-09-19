@@ -1,0 +1,129 @@
+<header
+    class="sticky top-0 z-[120] bg-[#fafafa]/95 backdrop-blur-md border-b-[2.5px] border-gdg-black animate-navbar"
+    data-purpose="primary-navigation"
+>
+    <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4"
+    >
+        <a
+            aria-label="GDG UVCE Homepage"
+            class="flex items-center gap-3 group focus:outline-none"
+            href="#"
+        >
+            <div
+                class="w-10 h-10 flex-shrink-0 relative transition-transform duration-200 group-hover:scale-105"
+            >
+                <img
+                    src="/icon.png"
+                    alt="GDG Logo"
+                    class="w-full h-full object-contain drop-shadow-sm"
+                />
+            </div>
+            <div class="flex flex-col">
+                <div class="flex items-center gap-1.5">
+                    <span
+                        class="font-extrabold text-lg sm:text-xl tracking-tight text-gdg-black"
+                        >Google Developer Group</span
+                    >
+                </div>
+                <div class="flex items-center gap-1">
+                    <span
+                        class="text-xs sm:text-sm font-semibold text-gdg-blue tracking-normal"
+                        >University of Visvesvaraya College of Engineering</span
+                    >
+                </div>
+            </div>
+        </a>
+        <nav
+            class="hidden lg:flex items-center gap-7 text-sm font-semibold text-gray-800"
+        >
+            <a class="hover:text-gdg-blue transition-colors" href="#mission"
+                >The Mission</a
+            >
+            <a class="hover:text-gdg-blue transition-colors" href="#squads"
+                >Squads</a
+            >
+            <a
+                class="hover:text-gdg-blue transition-colors flex items-center gap-1.5"
+                href="#matcher"
+            >
+                <span class="">Find Your Squad</span>
+            </a>
+            <a class="hover:text-gdg-blue transition-colors" href="#impact"
+                >Core Experience</a
+            >
+            <a class="hover:text-gdg-blue transition-colors" href="#faq"
+                >FAQs</a
+            >
+        </nav>
+        <div class="flex items-center gap-3">
+            <a
+                class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gdg-blue hover:bg-blue-600 text-white font-semibold text-sm transition-all duration-200 gdg-border shadow-neo-sm hover:shadow-neo hover:-translate-y-0.5 active:translate-y-0 active:shadow-none"
+                href="https://bit.ly/4AhEBb5"
+                target="_blank"
+            >
+                <span class="">Apply for Core '26</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button
+                aria-label="Toggle navigation menu"
+                class="lg:hidden p-2 rounded-lg gdg-border bg-white"
+                id="mobile-menu-btn"
+            >
+                <svg
+                    class="w-6 h-6 text-gdg-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M4 6h16M4 12h16m-7 6h7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+        class="absolute top-full left-4 right-4 mt-2 bg-white rounded-2xl gdg-border shadow-neo-lg px-6 py-6 space-y-4 opacity-0 pointer-events-none -translate-y-4 transition-all duration-300 lg:hidden flex flex-col z-50"
+        id="mobile-menu"
+    >
+        <a
+            class="block font-semibold text-gray-800 hover:text-gdg-blue"
+            href="#mission"
+            >The Mission</a
+        >
+        <a
+            class="block font-semibold text-gray-800 hover:text-gdg-blue"
+            href="#squads"
+            >Squads</a
+        >
+        <a
+            class="block font-semibold text-gray-800 hover:text-gdg-blue"
+            href="#matcher"
+            >Find Your Squad</a
+        >
+        <a
+            class="block font-semibold text-gray-800 hover:text-gdg-blue"
+            href="#impact"
+            >Core Experience</a
+        >
+        <a
+            class="block font-semibold text-gray-800 hover:text-gdg-blue"
+            href="#faq"
+            >Recruitment FAQs</a
+        >
+        <a
+            class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gdg-blue text-white font-bold gdg-border shadow-neo-sm"
+            href="https://bit.ly/4AhEBb5"
+            target="_blank"
+        >
+            <span class=""
+                >Apply for Core '26
+                <i data-lucide="arrow-right" class="w-4 h-4 inline -mt-0.5"></i
+            ></span>
+        </a>
+    </div>
+</header>
